@@ -1,0 +1,15 @@
+*{
+margin:0px;
+border:none;
+font-style:times;
+}
+body{
+background-color:#555;
+align-items:center;
+}
+.container{
+background-color:grey;
+}
+.for-btn{
+background-color:green;
+color:white;}

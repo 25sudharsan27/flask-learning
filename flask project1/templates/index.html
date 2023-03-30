@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='file/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>My first Webpage</h1>
+        <form action="/Register" method="POST" autocomplete="off">
+          <p1>name</p1>
+          <input class="form-det" type="text" name="name">
+          <p1>section</p1>
+          <input type="text" class="form-det" name="section">
+          <p1>city</p1>
+          <input type="text" class="form-det" name="city">
+          <p1>age</p1>
+          <input type="text" class="form-det" name="age">
+
+          <input type="submit" class="form-btn">
+        </form>
+    </div>
+</body>
+</html>
