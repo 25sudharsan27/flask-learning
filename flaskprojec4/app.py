@@ -1,0 +1,24 @@
+from flask import Flask, render_template, request
+import os
+import pandas as pd
+
+app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = 'static/excel'
+
+
+@app.route("/", methods=["POST", "GET"])
+def upload():
+    if request.method == "POST":
+        upload_excel = request.files["upload_excel"]
+        if upload_excel.filename != "":
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], upload_excel.filename)
+            upload_excel.save(filepath)
+            data = pd.read_excel(upload_excel)
+            return render_template("uploaded.html",
+                                   data=data.to_html(index=False).replace('<th>', '<th style="text-align:center;">'))
+    return render_template("upload.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

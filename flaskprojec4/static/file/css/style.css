@@ -1,0 +1,20 @@
+*{
+border:none;
+margin:none;
+}
+body{
+background-color:#555;
+}
+.container{
+background-color:grey;
+padding-left:100px;
+padding-top:100px;
+}
+
+input.btn-success{
+background-color:blue;
+padding:25px 75px;
+color:white;}
+
+.form-group{
+padding-top:30px;}
