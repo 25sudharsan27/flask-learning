@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='file/css/style.css')}}">
+</head>
+<body>
+
+    <h1>Message</h1>
+    <div class="container">
+        <h3 class="text-info">Flash Messages</h3>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for container,message in messages %}
+                <div class="alert">{{container}}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/" method="POST">
+            <input type="submit" value="Success" name="success" class="btn-success">
+            <input type="submit" value="Warning" name="warning" class="btn-warning">
+            <input type="submit" value="Primary" name="primary" class="btn-primary">
+            <input type="submit" value="Secondary" name="secondary" class="btn-secondary">
+            <input type="submit" value="Info" name="info" class="btn-info">
+            <input type="submit" value="Danger" name="danger" class="btn-danger">
+            <input type="submit" value="Dark" name="dark" class="btn-dark">
+
+        </form>
+    </div>
+
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(3000);
+    });
+</script>
